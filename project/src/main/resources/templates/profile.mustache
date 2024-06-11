@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+    <h1>Моя соціальна мережа</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="/profile">Профіль</a></li>
+            <li><a href="/friends">Друзі</a></li>
+            <li><a href="/logout">Вийти</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="profile">
+        <h2>Профіль користувача</h2>
+        <h3>{{user.username}}</h3>
+        <p>Email: {{user.email}}</p>
+        <p>Дата реєстрації: {{user.registrationDate}}</p>
+    </section>
+    <section id="posts">
+        <h2>Пости</h2>
+        {{#posts}}
+            <div class="post">
+                <p>{{content}}</p>
+                <p class="author">Автор: {{user.username}}</p>
+            </div>
+        {{/posts}}
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Моя соціальна мережа</p>
+</footer>
+</body>
+</html>
